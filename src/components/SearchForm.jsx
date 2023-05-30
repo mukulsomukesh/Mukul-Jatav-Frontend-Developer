@@ -5,7 +5,7 @@ import { applyFilters } from "../redux/action";
 export default function SearchForm() {
   const dispatch = useDispatch();
 
-    // State variables
+  // State variables
   const [type, setType] = useState("");
   const [status, setStatus] = useState("");
   const [originalLaunch, setOriginalLaunch] = useState("");
@@ -25,9 +25,12 @@ export default function SearchForm() {
     <div className="flex flex-wrap justify-center items-center bg-black p-4">
       {/* select status */}
       <div className="flex items-center m-4">
-        <label className="mr-4 font-bold text-white">Status:</label>
+        <label htmlFor="status-select" className="mr-4 font-bold text-white">
+          Status:
+        </label>
         {/* Status dropdown */}
         <select
+          id="status-select"
           className="form-select text-white bg-black border-2 border-white py-2 px-4"
           onChange={(e) => {
             setStatus(e.target.value);
@@ -43,9 +46,15 @@ export default function SearchForm() {
 
       {/* original launch input */}
       <div className="flex items-center m-4">
-        <label className="mr-4 font-bold text-white">Original Launch:</label>
+        <label
+          htmlFor="original-launch-input"
+          className="mr-4 font-bold text-white"
+        >
+          Original Launch:
+        </label>
         {/* Original launch input field */}
         <input
+          id="original-launch-input"
           type="datetime-local"
           className="form-input text-white bg-black border-2 border-white py-2 px-4 "
           placeholder="Original Launch"

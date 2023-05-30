@@ -5,7 +5,7 @@ import SearchForm from "./components/SearchForm";
 
 export default function App() {
   return (
-    <div className="App bg-black text-white">
+    <div className="bg-black text-white">
       {/* banner */}
       <Banner />
 

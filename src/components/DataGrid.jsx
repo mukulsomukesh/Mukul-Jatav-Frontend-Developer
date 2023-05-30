@@ -39,7 +39,7 @@ export default function DataGrid() {
     <div>
       {/* Display the result count or loading message */}
       {!isProcessing ? (
-        <h3 className="text-center text-white ml-5">
+        <h3 className="text-center text-white ml-5" data-testid="data-grid-message">
           Total <strong className="text-blue-400 "> {data.length} </strong>{" "}
           Result Found!
         </h3>
@@ -51,6 +51,7 @@ export default function DataGrid() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-5 py-1 sm:p-10">
         {dataForMapping?.map((el) => (
           <div
+          data-testid="data-grid-item"
             onClick={() => {
               openPopup(el);
             }}
@@ -140,7 +141,7 @@ export default function DataGrid() {
       </div>
 
       {/* Popup component */}
-      <Popup isOpen={isOpen} onClose={closePopup} selectedItem={selectedItem} />
+      <Popup data-testid="popup" isOpen={isOpen} onClose={closePopup} selectedItem={selectedItem} />
     </div>
   );
 }

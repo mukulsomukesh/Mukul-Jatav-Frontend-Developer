@@ -11,8 +11,7 @@ export default function Popup({ isOpen, onClose, selectedItem }) {
       <article className="bg-white rounded-lg p-8">
         {/* Display the capitalized capsule ID */}
         <h3 className="text-xl mb-4 text-blue-400 font-bold">
-          {selectedItem.capsule_id[0].toUpperCase() +
-            selectedItem.capsule_id.slice(1)}
+          {selectedItem.capsule_id }
         </h3>
 
         {/* Display capsule serial */}
